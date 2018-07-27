@@ -1,0 +1,53 @@
+.container {
+    margin-left: 0px auto; 
+    margin-right: 0px auto;
+    margin-top: 5%;  
+    float: right; 
+} 
+   
+
+    
+.image_carousel { 
+    width: 240px; 
+    height: 480px; 
+    overflow: hidden;  
+    position: relative;
+    
+} 
+
+    .inner { 
+       display: flex; 
+       position: absolute; 
+       left: -960px; 
+      
+   }
+
+   .next::after, .prev::after { 
+       content: '>'; 
+       position: absolute; 
+       top: 15%; 
+       right: 0; 
+       background-color: white; 
+       line-height: 3em; 
+       box-sizing: border-box; 
+       width: 1em; 
+       height : 3em; 
+       font-size: 20px; 
+       font-weight: bold; 
+       font-family:  sans-serif; 
+       transform: translateY(-50%);
+       padding: 0 0.2em; 
+       cursor: pointer; 
+       opacity: 0.5; 
+       transition: opacity 0.1 seconds linear; 
+    
+   }
+
+.next:hover::after, .prev:hover::after { 
+    opacity: 1; 
+}
+
+.prev::after { 
+    content: '<'; 
+    left: 0; 
+}
