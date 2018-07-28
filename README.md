@@ -1,2 +1,10 @@
 # Carousel_ImageSlider
-a javascript based images slider
+a JavaScript based image slider
+
+#Technologies 
+- HTML 
+- CSS
+- JavaScript (ES6 notation) 
+
+
+
