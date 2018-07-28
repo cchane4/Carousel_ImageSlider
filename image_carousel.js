@@ -1,29 +1,37 @@
 let carousel = document.getElementsByClassName('image_carousel'); 
 
-[].forEach(carousels, function (c) {
+[].forEach.call(carousel, function (c) {
     let next = c.getElementsByClassName('next')[0],
-    let prev = c.getElementsByClassName('prev')[0],
-    let bubbles = c.getElementsByClassName('bubbles')[0],
-    let inner = c.getElementsByClassName('inner')[0],
-    imgs = c.getElementsByClassName('img'); 
-    currentImageIndex = 0; 
+         previous = c.getElementsByClassName('previous')[0],
+        bubbles = c.getElementsByClassName('bubbles')[0],
+        inner = c.getElementsByClassName('inner')[0],
+        imgs = inner.getElementsByTagName('img'); 
+        currentImageIndex = 0;
+        width = 308; 
+
+   function switchImg () { 
+        inner.style.left = -width * currentImageIndex + 'px'; 
+    }
 
 
-
-    next.addEventListener("click", function(){ 
+    next.addEventListener("click", function () { 
         currentImageIndex++; 
+
         if (currentImageIndex >= imgs.length){ 
             currentImageIndex = 0; 
         }
-        swithchImg(); 
+        switchImg(); 
 
     });
  
-    prev.addEventListener("click", function() { 
+    previous.addEventListener("click", function () { 
          currentImageIndex--; 
 
-        if (currentImageIndex > 0) { 
+        if (currentImageIndex < 0) { 
             currentImageIndex = imgs.length - 1;
         } 
+        switchImg(); 
     }); 
+
+    switchImg(); 
 }); 
